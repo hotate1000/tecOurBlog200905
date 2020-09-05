@@ -16,6 +16,10 @@ class PostsController < ApplicationController
     @post_show = Post.find(params[:id])
   end
 
+  def edit
+    @post_edit = Post.find(params[:id])
+  end
+
   private
   def post_params
     params.require(:post).permit(:title, :content)
