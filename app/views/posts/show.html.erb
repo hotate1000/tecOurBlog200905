@@ -6,7 +6,7 @@
 </div>
 <div class='postAuthor'>
 </div>
-<%# <% if user_signed_in? && current_user.id == @post_show.user_id %> %>
+<%# <% if user_signed_in? && current_user.id == @post_show.user_id %> 
 <% if user_signed_in? && current_user.id == @post_show.user_id%>
   <div class='postManage'>
     <%= link_to '編集', edit_post_path(@post_show.id), class: "postManage__edit", method: :get %>
