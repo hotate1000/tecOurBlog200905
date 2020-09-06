@@ -6,10 +6,13 @@
 </div>
 <div class='postAuthor'>
 </div>
-<div class='postManage'>
-  <%= link_to '編集', edit_post_path(@post_show.id), class: "postManage__edit", method: :get %>
-  <%= link_to '削除', post_path(@post_show.id), class: "postManage__delete", method: :delete %>
-</div>
+<%# <% if user_signed_in? && current_user.id == @post_show.user_id %> %>
+<% if user_signed_in? && current_user.id == @post_show.user_id%>
+  <div class='postManage'>
+    <%= link_to '編集', edit_post_path(@post_show.id), class: "postManage__edit", method: :get %>
+    <%= link_to '削除', post_path(@post_show.id), class: "postManage__delete", method: :delete %>
+  </div>
+<% end %>
 <div class= 'postText'>
   <%= simple_format @post_show.content %>
 </div>
